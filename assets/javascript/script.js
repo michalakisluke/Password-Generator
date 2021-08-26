@@ -1,4 +1,4 @@
-// Assignment code here
+// Code in progress
 function generatePassword () {
     var letterLower = "abcdefghijklmnopqrstuvwxyz";
     var letterUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -9,40 +9,49 @@ function generatePassword () {
 
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
     
-    var useLower; 
-    useLower = window.confirm("Do you want to use lowercase letters?");
+    if (getLength >= 8 && getLength <= 128 ) {
+        var useLower; 
+        useLower = window.confirm("Do you want to use lowercase letters?");
 
-    var useUpper; 
-    useUpper = window.confirm("Do you want to use uppercase letters?");
+        var useUpper; 
+        useUpper = window.confirm("Do you want to use uppercase letters?");
 
-    var useNumber; 
-    useNumber = window.confirm("Do you want to use numbers?");
+        var useNumber; 
+        useNumber = window.confirm("Do you want to use numbers?");
 
-    var useSpecial; 
-    useSpecial = window.confirm("Do you want to use special characters?");
+        var useSpecial; 
+        useSpecial = window.confirm("Do you want to use special characters?");
 
-    if (useLower) {
-        answer += letterLower;
-    };
-    
-    if (useUpper) {
-        answer += letterUpper;
-    };
-    
-    if (useNumber) {
-        answer += number;
-    };
-    
-    if (useSpecial) {
-        answer += special;
-    };
+        if (useLower) {
+            answer += letterLower;
+        };
+        
+        if (useUpper) {
+            answer += letterUpper;
+        };
+        
+        if (useNumber) {
+            answer += number;
+        };
+        
+        if (useSpecial) {
+            answer += special;
+        };
 
-    answer = answer.split("");
+        answer = answer.split("");
 
-    for (i = 0; i < getLength; i++) {
-        var passChar = Math.floor(Math.random() * answer.length);
-        password += answer[passChar];
+        for (i = 0; i < getLength; i++) {
+            var passChar = Math.floor(Math.random() * answer.length);
+            password += answer[passChar];
+        };
+        
+        return password;
+    }
 
+    else if (getLength < 8 || getLength > 128) {
+        window.alert('Please choose between 8 - 128 characters');
+        generatePassword();
+        return password;
     };
     return password;
 };
