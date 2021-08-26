@@ -1,49 +1,48 @@
 // Assignment code here
 function generatePassword () {
-    var letterLower = letterLower.split("abcdefghijklmnopqrstuvwxyz");
-    var letterUpper = letterUpper.split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    var number = number.split("1234567890");
-    var special = special.split("!#$%&'()*+,-./:;<=>?@[]^_`{|}~");
+    var letterLower = "abcdefghijklmnopqrstuvwxyz";
+    var letterUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var number = "1234567890";
+    var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     var answer = '';
 
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
     
-    var useLower = function () {
-        window.confirm("Do you want to use lowercase letters?")
-    };
-    
-    var useUpper = function () {
-        window.confirm("Do you want to use uppercase letters?")
-    };
-    
-    var useNumber = function () {
-        window.confirm("Do you want to use numbers?")
-    };
-    
-    var useSpecial = function () {
-        window.confirm("Do you want special characters?")
-    };
+    var useLower; 
+    useLower = window.confirm("Do you want to use lowercase letters?");
+
+    var useUpper; 
+    useUpper = window.confirm("Do you want to use uppercase letters?");
+
+    var useNumber; 
+    useNumber = window.confirm("Do you want to use numbers?");
+
+    var useSpecial; 
+    useSpecial = window.confirm("Do you want to use special characters?");
 
     if (useLower) {
-        answer += useLower;
+        answer += letterLower;
     };
     
     if (useUpper) {
-        answer += useUpper;
+        answer += letterUpper;
     };
     
     if (useNumber) {
-        answer += useNumber;
+        answer += number;
     };
     
     if (useSpecial) {
-        answer += useSpecial;
+        answer += special;
     };
 
     for (i = 0; i < getLength; i++) {
         var passChar = Math.floor(Math.random() * answer.length);
-        password += answers[passChar];
+        password += answer[passChar];
+
+        return password;
     };
+
 };
 
 
