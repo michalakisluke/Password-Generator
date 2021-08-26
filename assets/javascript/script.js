@@ -5,6 +5,7 @@ function generatePassword () {
     var number = "1234567890";
     var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     var answer = '';
+    var password = '';
 
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
     
@@ -42,9 +43,8 @@ function generatePassword () {
         var passChar = Math.floor(Math.random() * answer.length);
         password += answer[passChar];
 
-        return password.value;
     };
-
+    return password;
 };
 
 
