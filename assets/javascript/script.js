@@ -1,5 +1,14 @@
 // Assignment code here
+var letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var number = "1234567890";
+var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
+
+// when button clicks, prompts for password critea
+// prompt for password length (8 - 128 characters)
+// prompt for what to include (lower / upper / number / special)
+
+// Generate Password & Display password
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
