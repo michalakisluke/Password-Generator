@@ -14,7 +14,7 @@ function generatePassword () {
         generatePassword();
         return password;
     }
-    
+
     else if (getLength >= 8 && getLength <= 128) {
         var useLower; 
         useLower = window.confirm("Do you want to use lowercase letters?");
@@ -53,7 +53,6 @@ function generatePassword () {
     };
     return password;
 };
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
