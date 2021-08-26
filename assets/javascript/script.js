@@ -1,13 +1,51 @@
 // Assignment code here
-var letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var number = "1234567890";
-var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+function generatePassword () {
+    var letterLower = letterLower.split("abcdefghijklmnopqrstuvwxyz");
+    var letterUpper = letterUpper.split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    var number = number.split("1234567890");
+    var special = special.split("!#$%&'()*+,-./:;<=>?@[]^_`{|}~");
+    var answer = '';
 
-// when button clicks, prompts for password critea
-// prompt for password length (8 - 128 characters)
-// prompt for what to include (lower / upper / number / special)
+    var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
+    
+    var useLower = function () {
+        window.confirm("Do you want to use lowercase letters?")
+    };
+    
+    var useUpper = function () {
+        window.confirm("Do you want to use uppercase letters?")
+    };
+    
+    var useNumber = function () {
+        window.confirm("Do you want to use numbers?")
+    };
+    
+    var useSpecial = function () {
+        window.confirm("Do you want special characters?")
+    };
 
-// Generate Password & Display password
+    if (useLower) {
+        answer += useLower;
+    };
+    
+    if (useUpper) {
+        answer += useUpper;
+    };
+    
+    if (useNumber) {
+        answer += useNumber;
+    };
+    
+    if (useSpecial) {
+        answer += useSpecial;
+    };
+
+    for (i = 0; i < getLength; i++) {
+        var passChar = Math.floor(Math.random() * answer.length);
+        password += answers[passChar];
+    };
+};
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
