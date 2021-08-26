@@ -36,11 +36,13 @@ function generatePassword () {
         answer += special;
     };
 
+    answer = answer.split("");
+
     for (i = 0; i < getLength; i++) {
         var passChar = Math.floor(Math.random() * answer.length);
         password += answer[passChar];
 
-        return password;
+        return password.value;
     };
 
 };
