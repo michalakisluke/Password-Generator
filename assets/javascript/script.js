@@ -9,7 +9,13 @@ function generatePassword () {
 
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
     
-    if (getLength >= 8 && getLength <= 128 ) {
+    if (getLength < 8 || getLength > 128) {
+        window.alert('Please choose between 8 - 128 characters');
+        generatePassword();
+        return password;
+    }
+    
+    else if (getLength >= 8 && getLength <= 128) {
         var useLower; 
         useLower = window.confirm("Do you want to use lowercase letters?");
 
@@ -44,14 +50,6 @@ function generatePassword () {
             var passChar = Math.floor(Math.random() * answer.length);
             password += answer[passChar];
         };
-        
-        return password;
-    }
-
-    else if (getLength < 8 || getLength > 128) {
-        window.alert('Please choose between 8 - 128 characters');
-        generatePassword();
-        return password;
     };
     return password;
 };
