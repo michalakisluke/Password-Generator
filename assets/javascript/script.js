@@ -8,11 +8,11 @@ function generatePassword () {
     var password = '';
 
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
-    
+ 
     if (getLength < 8 || getLength > 128) {
-        window.alert('Please choose between 8 - 128 characters');
-        generatePassword();
-        return password;
+        window.alert("You didn't choose a number between 8 - 128. Please try again.");
+        return "";
+
     }
 
     else if (getLength >= 8 && getLength <= 128) {
