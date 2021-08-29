@@ -1,5 +1,5 @@
-// Code in progress
 function generatePassword () {
+    //Set variables for password contents
     var letterLower = "abcdefghijklmnopqrstuvwxyz";
     var letterUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var number = "1234567890";
@@ -7,15 +7,20 @@ function generatePassword () {
     var answer = '';
     var password = '';
 
+    //Length prompt
     var getLength = parseInt(window.prompt("How many characters would you like your password to be? (Please choose between 8 - 128)"));
  
+    //Length verification, if not right length program exits function
     if (getLength < 8 || getLength > 128) {
         window.alert("You didn't choose a number between 8 - 128. Please try again.");
         return "";
 
     }
 
+    //Generate password
     else if (getLength >= 8 && getLength <= 128) {
+        
+        //chceck for desired password contents
         var useLower; 
         useLower = window.confirm("Do you want to use lowercase letters?");
 
@@ -28,6 +33,7 @@ function generatePassword () {
         var useSpecial; 
         useSpecial = window.confirm("Do you want to use special characters?");
 
+        //Combine variables into single variable
         if (useLower) {
             answer += letterLower;
         };
@@ -44,8 +50,10 @@ function generatePassword () {
             answer += special;
         };
 
+        //Split variable into multiple individual strings
         answer = answer.split("");
 
+        //Randomize selection, rewrite string
         for (i = 0; i < getLength; i++) {
             var passChar = Math.floor(Math.random() * answer.length);
             password += answer[passChar];
