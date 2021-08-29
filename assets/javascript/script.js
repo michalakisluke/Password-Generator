@@ -50,7 +50,7 @@ function generatePassword () {
             answer += special;
         }
 
-        else {
+        if (answer === "") {
             alert("You didn't choose any characters, please try again.");
             return "";
         }
