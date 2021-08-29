@@ -14,4 +14,4 @@ https://michalakisluke.github.io/Password-Generator/
 https://github.com/michalakisluke/Password-Generator
 
 ## Screenshot
-![alt text](https://github.com/michalakisluke/Password-Generator/main/assets/images/Screenshot.jpg?raw=true)
+![Password Generator Screenshot](https://github.com/michalakisluke/Password-Generator/main/assets/images/Screenshot.jpg?raw=true)
