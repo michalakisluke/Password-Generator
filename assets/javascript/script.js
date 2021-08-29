@@ -36,19 +36,24 @@ function generatePassword () {
         //Combine variables into single variable
         if (useLower) {
             answer += letterLower;
-        };
+        }
         
         if (useUpper) {
             answer += letterUpper;
-        };
+        }
         
         if (useNumber) {
             answer += number;
-        };
+        }
         
         if (useSpecial) {
             answer += special;
-        };
+        }
+
+        else {
+            alert("You didn't choose any characters, please try again.");
+            return "";
+        }
 
         //Split variable into multiple individual strings
         answer = answer.split("");
